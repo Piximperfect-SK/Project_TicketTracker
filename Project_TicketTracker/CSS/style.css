@@ -1,0 +1,270 @@
+:root {
+    --primary-color: #57CC99; /* Primary color for highlights and accents */
+    --secondary-color: #C7F9CC; /* Secondary color for backgrounds and sections */
+    --text-color: #22577A; /* Color for text */
+    --bg-color: #38A3A5; /* Background color for containers */
+    --btn-bg: #80ED99; /* Background color for buttons */
+    --btn-bg-hover: #57CC99; /* Hover background color for buttons */
+    --btn-green: #80ED99; /* Green button background color */
+    --btn-red: #FF6B6B; /* Red button background color for actions like delete */
+}
+
+.video-background {
+    position: absolute; /* Position the video in the background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide any overflow */
+    z-index: -1; /* Place the video behind other elements */
+}
+
+.video-background video {
+    position: fixed; /* Fix video to the viewport */
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: cover; /* Cover the entire viewport */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font style */
+    color: var(--text-color); /* Text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color changes */
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.title {
+    font-size: 2.5em; /* Font size for the title */
+    font-weight: bold; /* Bold text */
+    margin: 20px 0;
+    text-align: center;
+    position: fixed; /* Fix title to the top */
+    top: 10px;
+    width: 100%;
+    z-index: 1000; /* Ensure it is on top */
+    padding: 10px 0;
+    background-color: transparent; /* Transparent background */
+    color: white; /* Text color */
+}
+
+.time-container {
+    border-radius: 8px;
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--text-color);
+    position: fixed; /* Fix container to the top */
+    top: 70px;
+    background-color: var(--bg-color); /* Background color */
+    padding: 10px;
+    z-index: 1000; /* Ensure it is on top */
+}
+
+.container {
+    background-color: var(--secondary-color); /* Background color */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px;
+    width: 95%;
+    max-width: 1200px;
+    margin-top: 140px;
+    margin-left: 10%;
+    overflow: hidden; /* Hide overflow */
+    position: relative;
+}
+
+.table-container {
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: calc(100vh - 200px); /* Limit container height */
+}
+
+h1 {
+    color: var(--primary-color); /* Title color */
+    margin: 0;
+    font-size: 2em; /* Font size for headings */
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group label {
+    margin-right: 10px;
+    color: var(--text-color); /* Label color */
+    font-size: 1.2em; /* Font size for labels */
+}
+
+.form-group input[type="text"] {
+    width: calc(100% - 120px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.2em; /* Font size for input fields */
+    text-align: center;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Border color on focus */
+}
+
+.time-display {
+    margin-left: 20px;
+    font-size: 1.2em; /* Font size for time display */
+    color: var(--text-color); /* Color for time display */
+}
+
+.add-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--btn-green); /* Background color for add button */
+    border: none;
+    color: #fff;
+    font-size: 1.2em; /* Font size for add button */
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.add-btn:hover {
+    background-color: var(--btn-bg-hover); /* Background color on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse table borders */
+    margin-top: 20px;
+    table-layout: fixed; /* Fixed table layout */
+}
+
+th,
+td {
+    border: 1px solid #ddd; /* Border color for table cells */
+    padding: 4px;
+    text-align: center;
+    font-size: 1em; /* Font size for table text */
+    height: 50px;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Ellipsis for overflow text */
+}
+
+th {
+    background-color: var(--primary-color); /* Background color for table headers */
+    color: #fff; /* Text color for headers */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+td {
+    color: var(--text-color); /* Text color for table data */
+}
+
+.action-btn {
+    padding: 0.3em 0.5em;
+    margin: 0.3em;
+    border: none;
+    color: #fff;
+    font-size: 1em; /* Font size for action buttons */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.action-btn-add {
+    background-color: var(--btn-green); /* Background color for add action button */
+}
+
+.action-btn-subtract,
+.action-btn-delete {
+    background-color: var(--btn-red); /* Background color for subtract and delete buttons */
+    border: 2px solid var(--btn-red);
+    padding: 4px 8px;
+}
+
+.action-btn:hover {
+    background-color: var(--btn-bg-hover); /* Background color on hover */
+}
+
+.action-btn-delete:hover {
+    background-color: var(--btn-red); /* Background color on hover for delete button */
+    border: 2px solid var(--btn-red);
+}
+
+.summary-row {
+    background-color: var(--secondary-color); /* Background color for summary row */
+    font-weight: bold; /* Bold text */
+}
+
+.dark-mode {
+    --primary-color: #17a2b8; /* Dark mode primary color */
+    --secondary-color: #343a40; /* Dark mode secondary color */
+    --text-color: #fff; /* Dark mode text color */
+    --bg-color: #212529; /* Dark mode background color */
+    --btn-bg: #17a2b8; /* Dark mode button background color */
+    --btn-bg-hover: #117a8b; /* Dark mode button hover background color */
+}
+
+.toggle-container {
+    position: absolute; /* Position toggle button at the top right */
+    top: 10px;
+    right: 10px;
+}
+
+.toggle-btn {
+    background-color: var(--btn-bg); /* Background color for toggle button */
+    border: none;
+    color: #fff;
+    font-size: 1em; /* Font size for toggle button */
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 12px 24px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.toggle-btn:hover {
+    background-color: var(--btn-bg-hover); /* Background color on hover */
+}
+
+.export-btn {
+    background-color: black; /* Background color for export button */
+    border: white;
+    color: #fff;
+    font-size: 0.7em; /* Font size for export button */
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 4px 1px;
+    margin-left: 8px;
+}
+
+.warning {
+    color: red; /* Warning text color */
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2em; /* Font size for warning text */
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text-color); /* Footer text color */
+    z-index: 1000; /* Ensure footer is on top */
+}

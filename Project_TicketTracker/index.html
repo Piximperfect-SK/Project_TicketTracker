@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Tracker</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <!-- Video background container -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="https://cdn.pixabay.com/video/2024/06/30/218865_large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Title of the page -->
+    <div class="title">Ticket Tracker</div>
+
+    <!-- Main container for content -->
+    <div class="container" id="container">
+        <!-- Form group for adding agent -->
+        <div class="form-group">
+            <label for="agent">Agent Name</label>
+            <input type="text" id="agent" placeholder="Enter agent name">
+            <span id="currentDateTime" class="time-display"></span>
+        </div>
+        <!-- Form group for action buttons -->
+        <div class="form-group">
+            <button class="add-btn" onclick="addAgent()">Add Agent</button> <!-- Button to add an agent -->
+            <button class="export-btn" onclick="exportToExcel(event)">Export to Excel</button> <!-- Button to export data -->
+        </div>
+
+        <!-- Table container for displaying agents -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Agent</th>
+                        <th>Timing</th>
+                        <th>Count</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="agentTableBody">
+                    <!-- Agents will be dynamically added here -->
+                </tbody>
+                <tfoot>
+                    <tr class="summary-row">
+                        <td colspan="2">Total Count</td>
+                        <td id="totalCount">0</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- Warning message when max agents are reached -->
+        <div id="warning" class="warning" style="display: none;">No more agents can be added.</div>
+    </div>
+
+    <!-- Footer section -->
+    <div class="footer">
+        <p>Designed and Developed by Shubham Kumar</p>
+    </div>
+
+    <!-- Toggle dark mode button -->
+    <div class="toggle-container">
+        <button id="toggleDarkModeBtn" class="toggle-btn" onclick="toggleDarkMode(event)">Theme</button>
+    </div>
+    <script src="Javascript/script.js"></script>
+</body>
+</html>
